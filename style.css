@@ -135,27 +135,22 @@ h2::after {
     margin: 20px auto 0;
 }
 
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1.5s forwards;
+.pop-effect {
+    animation: popIn 1s ease forwards;
 }
 
-.slide-in {
-    opacity: 0;
-    transform: translateY(100px);
-    animation: slideIn 1.5s forwards;
+.pop-effect.special-skill {
+    color: #ff5722; /* Different color for special skills */
 }
 
-@keyframes fadeIn {
-    100% {
-        opacity: 1;
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
     }
-}
-
-@keyframes slideIn {
     100% {
+        transform: scale(1);
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -179,4 +174,35 @@ h2::after {
 .skill-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-link {
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-link i {
+    margin-right: 10px;
+}
+
+.contact-link:hover {
+    color: #2575fc;
+    transform: scale(1.1);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
 }
